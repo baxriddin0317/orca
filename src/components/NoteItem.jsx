@@ -26,7 +26,7 @@ function NoteItem({note}) {
         <div className='flex items-center justify-between'>
             <span className="text-gray-400 flex items-center">  
                 <i className='bx bx-time-five mr-2'></i>
-                3 minutes read
+                {note.time}
             </span>
 
             <div className='flex items-center '>

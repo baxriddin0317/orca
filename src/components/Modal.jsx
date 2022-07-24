@@ -17,14 +17,18 @@ function Modal() {
         let month = today.getMonth() + 1;
         let year = today.getFullYear();
         let date = today.getDate();
+        let hours = today.getHours();
+        let minut = today.getMinutes();
 
         let data = `${month}/${date}/${year}`;
+        let time = `${hours} : ${minut}`;
 
         const newNote = {
             id: Math.floor(Math.random() * 100000),
             ism,
             text,
-            data
+            data,
+            time
         }
 
         addNote(newNote);

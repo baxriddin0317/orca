@@ -4,9 +4,9 @@ import AppReducer from "./AppReducer";
 //initialState 
 const initialState = {
     notes: [
-        {id: 1, ism: "baxriddin", text: "shu ishni qilish kere", data: "24/07/2022"},
-        {id: 2, ism: "xusniddin", text: "shu ishni qilish kere", data: "24/07/2022"},
-        {id: 3, ism: "asilbek", text: "shu ishni qilish kere", data: "24/07/2022"}
+        {id: 1, ism: "baxriddin", text: "shu ishni qilish kere", data: "24/07/2022", time: "03:21"},
+        {id: 2, ism: "xusniddin", text: "shu ishni qilish kere", data: "24/07/2022", time: "17:21"},
+        {id: 3, ism: "asilbek", text: "shu ishni qilish kere", data: "24/07/2022", time: "18:21"}
     ]
 }
 
