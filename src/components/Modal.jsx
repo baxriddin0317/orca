@@ -13,10 +13,18 @@ function Modal() {
     const onSubmit = e => {
         e.preventDefault();
 
+        let today = new Date()
+        let month = today.getMonth() + 1;
+        let year = today.getFullYear();
+        let date = today.getDate();
+
+        let data = `${month}/${date}/${year}`;
+
         const newNote = {
             id: Math.floor(Math.random() * 100000),
             ism,
-            text
+            text,
+            data
         }
 
         addNote(newNote);

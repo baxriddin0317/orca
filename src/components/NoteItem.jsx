@@ -8,7 +8,7 @@ function NoteItem({note}) {
     <li className="mb-7 border-b py-2" >
         <div className="flex justify-between">
             <span className="text-gray-400">
-                September 24.2020
+                {note.data}
             </span>
             <span className="text-gray-400">
                 Design theory

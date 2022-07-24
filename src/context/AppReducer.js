@@ -1,4 +1,4 @@
-export default (state, action) => {
+function AppReducer (state, action) {
     switch(action.type) {
         case 'DELETE_NOTE':
             return{
@@ -14,3 +14,5 @@ export default (state, action) => {
             return state;
     }
 }
+
+export default AppReducer;
