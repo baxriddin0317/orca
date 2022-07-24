@@ -43,7 +43,7 @@ function Modal() {
   return (
     <div className='fixed top-[150px] left-0 w-full h-full flex justify-center'>
         <form onSubmit={onSubmit} className='w-[500px] relative p-12 h-96 bg-white rounded-lg shadow-xl'>
-            <span className='absolute right-4 top-4 text-xl cursor-pointer' onClick={() => setOpenModal(false)}>x</span>
+            <span className='absolute right-4 top-4 text-xl cursor-pointer' onClick={() => {setOpenModal(false); noteEdit.edit = false;}}>x</span>
             <div className='flex flex-col mb-4'>
                 <label htmlFor="ism" className='capitalize text-xl mb-2'>Ism</label>
                 <input type="text" value={ism} onChange={(e) => setIsm(e.target.value)} className='border py-2 px-3' placeholder='Name' />
