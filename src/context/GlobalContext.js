@@ -1,10 +1,10 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 import AppReducer from "./AppReducer";
 
 //initialState 
 const initialState = {
     notes: [
-        
+
     ]
 }
 
@@ -29,10 +29,30 @@ export const GlobalProvider = ({children}) => {
         })
     }
 
+    function updateNote(id,note) {
+        dispatch({
+            type: 'UPDATE_NOTE',
+            id: id,
+            payload: note
+        })
+    }
+
+    const [noteEdit, setEditNote] = useState({});
+    // edit 
+    const editNote = (note) => {
+        setEditNote({
+            note,
+            edit: true
+        })
+    }
+
     return (<GlobalContext.Provider value={{
         notes: state.notes,
+        noteEdit,
         deletNote,
-        addNote
+        addNote,
+        updateNote,
+        editNote
     }}>
         {children}
     </GlobalContext.Provider>)

@@ -8,7 +8,7 @@ function Modal() {
     const [ text, setText ] = useState('');
 
     const { setOpenModal } = useContext(ModalContext);
-    const { addNote } = useContext(GlobalContext);
+    const { addNote, noteEdit, updateNote } = useContext(GlobalContext);
 
     const onSubmit = e => {
         e.preventDefault();
@@ -31,7 +31,12 @@ function Modal() {
             time
         }
 
-        addNote(newNote);
+        if(noteEdit.edit === true){
+            updateNote(noteEdit.note.id, newNote)
+            noteEdit.edit = false;
+        }else{
+            addNote(newNote);
+        }
         setOpenModal(false);
     }
 

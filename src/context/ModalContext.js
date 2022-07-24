@@ -9,7 +9,7 @@ export const ModalProvider = ({children}) => {
 
     return <ModalContext.Provider value={{
         openModal,
-        setOpenModal
+        setOpenModal,
     }}>
         {children}
     </ModalContext.Provider>

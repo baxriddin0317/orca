@@ -10,6 +10,11 @@ function AppReducer (state, action) {
                 ...state,
                 notes: [action.payload, ...state.notes]
             }
+        case 'UPDATE_NOTE':
+            return{
+                ...state,
+                notes: state.notes.map(note => note.id === action.id ? {...note, ...action.payload} : note)
+            }            
         default:
             return state;
     }

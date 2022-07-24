@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalContext'
+import ModalContext from '../context/ModalContext'
 
 function NoteItem({note}) {
-    const { deletNote } = useContext(GlobalContext)
+    const { deletNote, editNote } = useContext(GlobalContext)
+    const { setOpenModal } = useContext(ModalContext);
 
   return (
     <li className="mb-7 border-b py-2" >
@@ -35,6 +37,12 @@ function NoteItem({note}) {
                     onClick={() => deletNote(note.id)} 
                 >
                     o'chirish
+                </button>
+                <button 
+                    className='capitalize border py-2 px-5 ml-2 rounded'
+                    onClick={() => {editNote(note); setOpenModal(true)}} 
+                >
+                    taxrirlash
                 </button>
             </div>
         </div>
