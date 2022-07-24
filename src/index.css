@@ -1,13 +1,19 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base{
+  body {
+    @apply font-medium text-black;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply focus:outline-none;
+  }
+
+  .menu__item{
+    @apply py-1 px-2 lg:py-2 lg:px-4 cursor-pointer relative bg-transparent transition-colors before:absolute before:left-0 before:top-0 before:-z-10 before:h-full before:w-full before:origin-top-left before:scale-y-0 before:bg-[#FF5C38] before:transition-transform before:content-[""] before:duration-300 hover:text-white before:hover:scale-y-100 
+  }
 }
