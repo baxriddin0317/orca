@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { GlobalContext } from '../context/GlobalContext';
 import ModalContext from "../context/ModalContext"
 
@@ -39,6 +39,14 @@ function Modal() {
         }
         setOpenModal(false);
     }
+
+    useEffect(() => {
+        if(noteEdit.edit === true){
+            setIsm(noteEdit.note.ism);
+            setText(noteEdit.note.text);
+            
+        }
+    }, [noteEdit])
 
   return (
     <div className='fixed top-[150px] left-0 w-full h-full flex justify-center'>
